@@ -7,7 +7,7 @@
     du déplacement du joueur.
 <ol>
     <li><b>FAIT : </b>Transparence des sprites du joueur</li>
-    <li><b>FAIT : </b>Transparence du sprite objet/li>
+    <li><b>FAIT : </b>Transparence du sprite objet</li>
 </ol>
 
 ## Début gestion collision
