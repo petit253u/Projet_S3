@@ -13,5 +13,6 @@
 <ol>
     <li><b>UPDATE : </b>Contient update.c et update.h gérant les fonctions updatant les informations du jeu</li>
     <li><b>INIT : </b>Contient init.c et init.h gérant les fonctions initialisant les informations du jeu</li>
+    <li><b>GENERAL : </b>Contient general.h, sdl_light.c et sdl_light.h gérant des fonctions simplifiant SDL, les structures et constantes du jeu</li>
     <li><b>RESSOURCES : </b>Contient les images et sprite du jeu</li>
 </ol>
