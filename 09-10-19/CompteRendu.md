@@ -9,8 +9,8 @@
 </ol>
 
 ## Mise en place du sprite joueur
-    Sprite test du joueur gérant l'alternance de différentes images en fonction de la direction
-    du déplacement du joueur.
+    Sprite test du joueur gérant l'alternance de différentes images en fonction 
+    de la direction du déplacement du joueur.
 <ol>
     <li><b>FAIT : </b>Changement de sprite "z": vers le haut</li>
     <li><b>FAIT : </b>Changement de sprite "s": vers le bas</li>
