@@ -22,3 +22,10 @@
     <li><b>FAIT : </b> Nouvelle structure du menu démarrer : menu_entree_t</li>
     <li><b>FAIT : </b> Squelette du menu démarrer</li>
 </ol>
+
+## Sprite
+    Dessin de sprites pour le jeu
+<ol>
+    <li><b>FAIT : </b> Sprite Bouton 1 : Bouton JOUER, la souris n'est pas glissé dessus</li>
+    <li><b>FAIT : </b> Sprite Bouton 2 : Bouton JOUER, la souris est dessus</li>
+</ol>
