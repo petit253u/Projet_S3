@@ -6,6 +6,8 @@
 * \date 
 */
 
+///////////////////////////////////////////////////////
+
 #include "sdl-light.h"
 
 /**
@@ -33,14 +35,29 @@
 */
 #define SPRITE_SIZE_WIDTH 68
 
+/**
+* \brief Taille de l'objet (sprite)
+*/
 #define SPRITE_TEST_HEIGHT 32
 
+/**
+* \brief Taille de l'objet (sprite)
+*/
 #define SPRITE_TEST_WIDTH 32
+
+/**
+* \brief Largeur du sprite bouton
+*/
+#define SPRITE_BOUTON_WIDTH 600
+
+/**
+* \brief Largeur du sprite bouton
+*/
+#define SPRITE_BOUTON_HEIGHT 450
 
 /**
 * \brief Pas de déplacement du sprite
 */
-
 #define MOVING_STEP 10
 
 ///////////////////////////////////////////////////////
