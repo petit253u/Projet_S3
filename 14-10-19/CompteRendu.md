@@ -1,6 +1,6 @@
-# 11-10-19
+# 14-10-19
 
-<b>ERREUR DE SEGMENTATION</b>
+<b>ERREUR SEGMENTATION REGLEE</b>
 
 ## Début gestion collision
     Codage de le détection et du replacement adéquat apres une collision
@@ -8,11 +8,17 @@
     <li><b>PROBLEME : </b>Replacement incorrect du joueur dans la bonne direction apres la collision avec le sprite bloc</li>
 </ol>
 
-## Découpage des fichiers
-    Découpage des fichiers du jeu: 
+## Découpe du Main
+    Codage de le détection et du replacement adéquat apres une collision
 <ol>
-    <li><b>UPDATE : </b>Contient update.c et update.h gérant les fonctions updatant les informations du jeu</li>
-    <li><b>INIT : </b>Contient init.c et init.h gérant les fonctions initialisant les informations du jeu</li>
-    <li><b>GENERAL : </b>Contient general.h, sdl_light.c et sdl_light.h gérant des fonctions simplifiant SDL, les structures et constantes du jeu</li>
-    <li><b>RESSOURCES : </b>Contient les images et sprite du jeu</li>
+    <li><b>BOUCLE MENU DEMARRER : </b>Boucle s'occupant du menu de départ</li>
+    <li><b>BOUCLE JEU : </b>Boucle s'occupant du jeu en général</li>
+    <li><b>BOUCLE DE VIDANGE : </b>Boucle s'occupant de clean les infos du jeu</li>
+</ol>
+
+## Début Menu-Départ
+    Début de codage du menu de départ du jeu 
+<ol>
+    <li><b>FAIT : </b> Nouvelle structure du menu démarrer : menu_entree_t</li>
+    <li><b>FAIT : </b> Squelette du menu démarrer</li>
 </ol>
