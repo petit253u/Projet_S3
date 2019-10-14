@@ -69,8 +69,8 @@ void init_data(world_t * world){
 void init_data_debut(menu_entree_t* debut){
 	debut->fermer = 0;
 	debut->background = load_image( "ressources/test_background.bmp" );
-	debut->bouton1 = load_image( "ressources/sprite.bmp" );
-	debut->bouton2 = load_image( "ressources/test_sprite_01.bmp" );
+	debut->bouton1 = load_image( "ressources/bouton_menu_1.bmp" );
+	debut->bouton2 = load_image( "ressources/bouton_menu_2.bmp" );
 	debut->bouton = debut->bouton1;
 	debut->lequel = 1;
 	debut->gameover = 0;
