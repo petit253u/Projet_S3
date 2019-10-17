@@ -1,0 +1,233 @@
+#include "../GENERAL/general.h"
+
+void win_or_loose(world_t *world){
+	if(world->combat.victoire == true){
+		return;	
+	}
+	//perdu(world);
+}
+
+void attaquer(world_t* world){
+	int nb_alea = (rand() % 3) + 1;
+	printf("%d\n",nb_alea); 
+	switch(nb_alea){
+		case 1:
+			printf("SNAKE\n"); 
+		break;
+		case 2:
+			printf("PONG\n"); 
+		break;
+		case 3:
+			printf("CASSE-BRIQUE\n"); 
+		break;
+	}	
+	return;
+}
+
+void esquiver(world_t* world){
+	int nb_alea = (rand() % 2) + 1;
+	printf("%d\n",nb_alea); 
+	switch(nb_alea){
+		case 1:
+			printf("PAC-MAN\n"); 
+		break;
+		case 2:
+			printf("FUIS-LES-LIGNES\n"); 
+		break;
+
+	}
+	return;
+}
+
+void fuir(world_t* world){
+	int nb_alea = (rand() % 100);
+	printf("%d\n",nb_alea);
+	if(nb_alea <50){
+		world->combat.ouvert = false;
+	} 
+	return;
+}
+
+//////////////////////////////////////////////////////
+
+void init_graphics_bouton_combat(SDL_Surface *ecran,bouton_combat_t* b){
+	printf("		INIT BOUTON\n");
+	//set_transparence(ecran, b->sprite, 255, 0, 255);
+}
+
+void init_graphics_combat(SDL_Surface *ecran, combat_t *combat){
+	for(int i =0; i < combat->nb_bouton; i++){
+		printf("	BOUCLE INIT BOUTON\n");
+		init_graphics_bouton_combat(ecran,&combat->tab_bouton[i]);
+	}
+	//set_transparence(ecran, combat->sprite_ennemi, 255, 0, 255);
+}
+
+/////////////////////////////////////////////////////
+
+void refresh_graphics_bouton_combat(SDL_Surface *ecran,bouton_combat_t* b,int* temp){
+	//printf("			REFRESH\n");
+	apply_surface(b->sprite,ecran,*temp,550);
+	*temp = *temp + 240;
+}
+
+
+void refresh_graphics_combat(SDL_Surface *ecran, combat_t *combat){
+	int temp = 40;
+	apply_surface(combat->fond,ecran, 0,0);
+
+	// sprite de 50 sur 200
+	for(int i =0; i < combat->nb_bouton; i++){
+		//printf("		BOUCLE REFRESH\n");
+		refresh_graphics_bouton_combat(ecran,&combat->tab_bouton[i],&temp);
+	}
+	//printf("		SORTIE\n");
+	// sprite de 450 sur 900
+	//apply_surface(combat->sprite_ennemi,ecran,50,50);
+
+	refresh_surface(ecran);
+}
+
+/////////////////////////////////////////////////////
+
+void update_click_souris_2(combat_t* combat, int x, int y){
+	combat->souris.click_x = x;
+	combat->souris.click_y = y;
+}
+
+void update_pos_souris_2(combat_t* combat, int x, int y){
+	combat->souris.x = x;
+	combat->souris.y = y;	
+}
+
+/////////////////////////////////////////////////////
+
+void handle_event_combat(SDL_Event *event, combat_t *combat){
+	int mouseX, mouseY;
+	Uint8 *keystates;
+	while( SDL_PollEvent( event ) ) {
+		//Si l'utilisateur a cliqué sur le X de la fenêtre
+		if( event->type == SDL_QUIT ) {
+			//On quitte le programme
+			combat->gameover = 1;
+			combat->victoire = false;
+			combat->ouvert = false;
+		}
+		/* Si l'utilisateur appuie sur
+		la touche droite de la souris */
+		if( event->type == SDL_MOUSEBUTTONDOWN){
+              		SDL_GetMouseState(&mouseX, &mouseY);
+			update_click_souris_2(combat, mouseX, mouseY);
+		}
+		if( event->type == SDL_MOUSEMOTION){
+			//printf("BOUGE\n");
+			SDL_GetMouseState(&mouseX, &mouseY);
+			update_pos_souris_2(combat, mouseX, mouseY);
+		}
+		keystates = SDL_GetKeyState( NULL );
+		if( keystates[ SDLK_h ] ) {
+			printf("SNAKE\n");
+		}
+		if( keystates[ SDLK_j ] ) {
+			printf("PONG\n");
+		}
+		if( keystates[ SDLK_k ] ) {
+			printf("CASSE-BRIQUE\n");
+		}
+		if( keystates[ SDLK_l ] ) {
+			printf("PAC-MAN\n");
+		}
+		if( keystates[ SDLK_m ] ) {
+			printf("FUIS LES LIGNES\n");
+		}
+	}
+} 
+
+/////////////////////////////////////////////////////
+
+void quel_action(int i, world_t* world){
+	switch(i){
+		case 1:
+			printf("ATTAQUER\n");
+			attaquer(world);
+		break;
+		case 2:
+			printf("DISCUTER\n");
+			esquiver(world);
+		break;
+		case 3:
+			printf("OBJET\n");
+		break;
+		case 4:
+			printf("FUIR\n");
+			fuir(world);
+		break;
+	}
+}
+
+/////////////////////////////////////////////////////
+
+void verif_click_bouton_combat(bouton_combat_t *b, souris_t* souris, int i, world_t* world){
+	if((souris->click_x >= b->x) && (souris->click_x <= b->x+b->largeur)){
+		if((souris->click_y >= b->y) && (souris->click_y <= b->y+b->hauteur)){
+			quel_action(i, world);
+			souris->click_x = -100;
+			souris->click_y = -100;
+		}
+	}
+}
+
+void verif_click_combat(combat_t *combat, world_t* world){
+	for(int i =0; i<combat->nb_bouton; i++){
+		verif_click_bouton_combat(&combat->tab_bouton[i],&combat->souris,i+1,world);
+	}
+}
+
+/////////////////////////////////////////////////////
+
+void verif_pos_souris_bouton_combat(bouton_combat_t *b, souris_t* souris){
+	if((souris->x >= b->x) && (souris->x <= b->x+b->largeur)){
+		if((souris->y >= b->y) && (souris->y <= b->y+b->hauteur)){
+			b->sprite = b->b2;
+			//printf("...................................TOUCHE\n");
+			return;
+		}
+		b->sprite = b->b1;
+	}
+	//printf("LA\n");
+	b->sprite = b->b1;
+}
+
+void verif_pos_souris_combat(combat_t *combat){
+	for(int i =0; i<combat->nb_bouton; i++){
+		verif_pos_souris_bouton_combat(&combat->tab_bouton[i],&combat->souris);
+	}
+}
+
+/////////////////////////////////////////////////////
+
+int boucle_combat(world_t *world, SDL_Surface *ecran){
+	SDL_Event event2;
+	int a = 0;
+	//init_ennemi();
+	//printf("PV\n");
+	world->combat.pv_restant = world->j.pv;
+	//printf("INIT GRAPH\n");
+	init_graphics_combat(ecran,&world->combat);
+	//printf("CONDITION BOUCLE\n");
+	while(world->combat.ouvert == true){
+		//printf("BOUCLE\n");
+		//printf("	HANDLE\n");
+		handle_event_combat(&event2, &world->combat);
+		//printf("	VERIF POS SOURIS\n");
+		verif_pos_souris_combat(&world->combat);
+		//printf("	VERIF CLICK SOURIS\n");
+		verif_click_combat(&world->combat, world);
+		//printf("	REFRESH\n");
+		refresh_graphics_combat(ecran, &world->combat);
+	}
+	win_or_loose(world); // gere la victoire, ou l'interface de perte
+	init_data_combat(&world->combat);
+	a = world->combat.gameover;
+	return a;
+}
