@@ -12,6 +12,13 @@
     Dessin de sprites pour le jeu
 <ol>
     <li><b>FAIT : </b>Affectation des sprites des boutons de combats en fonction de l'étape de combat</li>
+    <li><b>SPRITE couleur bouton : </b>Bouton coloré fleche haute qui se superpose si la touche est enfoncée </li>
+    <li><b>SPRITE couleur bouton : </b>Bouton coloré fleche basse qui se superpose si la touche est enfoncée </li>
+    <li><b>SPRITE couleur bouton : </b>Bouton coloré fleche gauche qui se superpose si la touche est enfoncée </li>
+    <li><b>SPRITE couleur bouton : </b>Bouton coloré fleche droite qui se superpose si la touche est enfoncée </li>
+    <li><b>FOND Plateau attaque et esquive : </b>Fond style borne d'arcade servant de cadre aux mini-jeux</li>
+    <li><b>FOND Fuis les lignes : </b>Fond utile pour le mini-jeu Fuis les lignes</li>
+    <li><b>FOND Pong : </b>Fond utile pour le mini-jeu Pong</li>
 </ol>
 
 ## Debut codage Fuis les lignes
