@@ -1,31 +1,22 @@
-# 14-10-19
+# 18-10-19
 
-<b>ERREUR SEGMENTATION REGLEE</b>
-
-## Début gestion collision
-    Codage de le détection et du replacement adéquat apres une collision
+## Gestion des trois étapes d'un combat
+    Codage des trois etapes de combats
 <ol>
-    <li><b>PROBLEME : </b>Replacement incorrect du joueur dans la bonne direction apres la collision avec le sprite bloc</li>
-</ol>
-
-## Découpe du Main
-    Codage de le détection et du replacement adéquat apres une collision
-<ol>
-    <li><b>BOUCLE MENU DEMARRER : </b>Boucle s'occupant du menu de départ</li>
-    <li><b>BOUCLE JEU : </b>Boucle s'occupant du jeu en général</li>
-    <li><b>BOUCLE DE VIDANGE : </b>Boucle s'occupant de clean les infos du jeu</li>
-</ol>
-
-## Début Menu-Départ
-    Début de codage du menu de départ du jeu 
-<ol>
-    <li><b>FAIT : </b> Nouvelle structure du menu démarrer : menu_entree_t</li>
-    <li><b>FAIT : </b> Squelette du menu démarrer</li>
+    <li><b>FAIT : </b>Etape 1 : toute action est possible</li>
+    <li><b>FAIT : </b>Etape 2 : seuls attaque et objets sont utilisables</li>
+    <li><b>FAIT : </b>Etape 3 : Apparition de Achever, Torturer, et Epargner</li>
 </ol>
 
 ## Sprite
     Dessin de sprites pour le jeu
 <ol>
-    <li><b>FAIT : </b> Sprite Bouton 1 : Bouton JOUER, la souris n'est pas glissé dessus</li>
-    <li><b>FAIT : </b> Sprite Bouton 2 : Bouton JOUER, la souris est dessus</li>
+    <li><b>FAIT : </b>Affectation des sprites des boutons de combats en fonction de l'étape de combat</li>
+</ol>
+
+## Debut codage Fuis les lignes
+    Debut du codage du mini jeux d'esquive "Fuis les lignes"
+<ol>
+    <li><b>FAIT : </b>Structure et initialisation de fuis les lignes</li>
+    <li><b>FAIT : </b>Boucle de jeu -> squelette du code</li>
 </ol>
