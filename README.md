@@ -109,6 +109,7 @@
 		<li><b> Recolte d'objets  </b></li>
 	</ol>
 </ol>
+
 ### Inventaire 
 <ol>
 	<li><b>Gestion Inventaire :</b></li>
