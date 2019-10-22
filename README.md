@@ -1,4 +1,4 @@
-# Projet Jeu vidéo S3 : CE QU'IL RESTE A FAIRE 
+# __Projet Jeu vidéo S3 : CE QU'IL RESTE A FAIRE__
 
 ## Scrolling ecran : 
 	° Gestion bordure camera 
