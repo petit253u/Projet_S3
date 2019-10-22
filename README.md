@@ -90,13 +90,26 @@
 </ol>
 
 ### Paterne :
-	° Paterne personnalisé pour chaque jeu
+<ol>
+	<li><b>Paterne : </b> Personnalisé pour chaque mini jeu et chaque ennemi</li>
+</ol>
 
 ## Map 
 ### Mur 
-		° gestion collision mur invisible
+<ol>
+	<li><b>Collision avec les murs : </b> Rebond</li>
+</ol>
+
 ### Objet 
-		° gestion collision avec objet
-		° Pouvoir passer derriere un objet
+<ol>
+	<li><b>Collision avec objet : </b> Rebond</li>
+	<li><b>Interaction : </b> Touche A</li>
+	<ol>
+		<li><b> Boite de dialogue : </b>Commentaire sarcastique</li>
+	</ol>
+</ol>
+
 ## Enigme
-		° Bibliotheque
+<ol>
+	<li><b>Bibliotheque : </b> Mettre les livres de la bonne couleurs à la bonne place</li>
+</ol>
