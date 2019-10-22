@@ -106,8 +106,18 @@
 	<li><b>Interaction : </b> Touche A</li>
 	<ol>
 		<li><b> Boite de dialogue : </b>Commentaire sarcastique</li>
+		<li><b> Recolte d'objets  </b></li>
 	</ol>
 </ol>
+### Inventaire 
+<ol>
+	<li><b>Gestion Inventaire :</b></li>
+	<ol>
+		<li><b> Boite d'affichage </b></li>
+		<li><b> Navigation </b></li>
+	</ol>
+</ol>
+
 
 ## Enigme
 <ol>
