@@ -1,6 +1,6 @@
 # Projet Jeu vidéo S3 : CE QU'IL RESTE A FAIRE
 
-## _Scrolling ecran :_ 
+## =Scrolling ecran :
 	° Gestion bordure camera 
 	° Centré sur le personnage 
 
