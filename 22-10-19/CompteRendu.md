@@ -2,7 +2,7 @@
 
 <b>ERREUR SEGMENTATION REGLEE</b>
 
-## Début gestion collision
+## ==Début gestion collision==
     Codage de le détection et du replacement adéquat apres une collision
 <ol>
     <li><b>PROBLEME : </b>Replacement incorrect du joueur dans la bonne direction apres la collision avec le sprite bloc</li>
